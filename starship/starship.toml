@@ -1,0 +1,215 @@
+# Starship prompt configuration
+# Reference: https://starship.rs/config/
+# https://github.com/starship/starship
+
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = 'pastel_powerline'
+
+# Test format string
+test_format = """
+[░▒▓](fg:segment1_bg)\
+$os\
+[](fg:segment1_bg bg:segment2_bg)\
+$directory\
+[](fg:segment2_bg bg:segment3_bg)\
+[  test2 ](fg:dark_text bg:segment3_bg)\
+[](fg:segment3_bg bg:segment4_bg)\
+[  Test3 ](fg:dark_text bg:segment4_bg)\
+[](fg:segment4_bg bg:segment5_bg)\
+[  12:45 ](fg:light_text bg:segment5_bg)\
+[ ](fg:segment5_bg)\
+took [12m30s](bold yellow)\
+\n$character
+"""
+
+format = """
+[░▒▓](fg:segment1_bg)\
+$os\
+[](fg:segment1_bg bg:segment2_bg)\
+$directory\
+[](fg:segment2_bg bg:segment3_bg)\
+$git_branch\
+$git_status\
+[](fg:segment3_bg bg:segment4_bg)\
+$c\
+$dotnet\
+$golang\
+$haskell\
+$java\
+$kotlin\
+$lua\
+$nodejs\
+$python\
+$rust\
+$scala\
+$zig\
+[](fg:segment4_bg bg:segment5_bg)\
+$time\
+[ ](fg:segment5_bg)\
+$cmd_duration\
+\n$character
+"""
+
+[directory]
+disabled = false
+format = '[ $path ]($style)[$read_only]($read_only_style)'
+style = 'bg:segment2_bg fg:dark_text'
+read_only = '󰌾 '
+read_only_style = 'bg:segment2_bg fg:dark_text'
+truncation_symbol = '.../'
+
+[os]
+disabled = false
+style = 'bg:segment1_bg fg:light_text'
+format = '[ $symbol ]($style)'
+
+[os.symbols]
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+EndeavourOS = ""
+Fedora = "󰣛"
+Gentoo = "󰣨"
+Linux = "󰌽"
+Macos = "󰀵"
+Manjaro = ""
+Mint = "󰣭"
+Pop = ""
+Raspbian = ""
+RedHatEnterprise = "󱄛"
+Redhat = "󱄛"
+SUSE = ""
+Ubuntu = "󰕈"
+Windows = "󰍲"
+
+[git_branch]
+symbol = ""
+style = "fg:dark_text bg:segment3_bg"
+format = '[ $symbol $branch(:$remote_name/$remote_branch) ]($style)'
+
+[git_status]
+style = "fg:dark_text bg:segment3_bg"
+format = '[$all_status$ahead_behind ]($style)'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[c]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[dotnet]
+symbol = "󰪮"
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[golang]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[haskell]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[java]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[kotlin]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[lua]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[python]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[rust]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[scala]
+symbol = " "
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[zig]
+symbol = ""
+style = "fg:dark_text bg:segment4_bg"
+format = '[ $symbol( $version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:light_text bg:segment5_bg"
+format = '[  $time ]($style)'
+
+[palettes]
+  # Catppuccin palette
+  # https://catppuccin.com/palette
+  [palettes.catppuccin_mocha]
+  dark_text = '#11111b'   # catppuccin_mocha.Crust
+  light_text = '#cdd6f4'  # catppuccin_mocha.Text
+  segment1_bg = '#45475a' # catppuccin_mocha.Surface1
+  segment2_bg = '#f38ba8' # catppuccin_mocha.Red
+  segment3_bg = '#fab387' # catppuccin_mocha.Peach
+  segment4_bg = '#94e2d5' # catppuccin_mocha.Teal
+  segment5_bg = '#89b4fa' # catppuccin_mocha.Blue
+
+  # Catppuccin palette
+  # https://catppuccin.com/palette
+  [palettes.catppuccin_latte]
+  dark_text = '#11111b'   # catppuccin_mocha.Crust
+  light_text = '#cdd6f4'  # catppuccin_mocha.Text
+  segment1_bg = '#45475a' # catppuccin_mocha.Surface1
+  segment2_bg = '#ea76cb' # catppuccin_mocha.Red
+  segment3_bg = '#8839ef' # catppuccin_mocha.Peach
+  segment4_bg = '#fe640b' # catppuccin_mocha.Teal
+  segment5_bg = '#1e66f5' # catppuccin_mocha.Blue
+
+  # Pastel Powerline Preset
+  # https://starship.rs/presets/pastel-powerline 
+  [palettes.pastel_powerline]
+  dark_text = '#11111b'   # catppuccin_mocha.Crust
+  light_text = '#cdd6f4'  # catppuccin_mocha.Text
+  segment1_bg = '#9A348E' # catppuccin_mocha.Surface1
+  segment2_bg = '#DA627D' # catppuccin_mocha.Red
+  segment3_bg = '#FCA17D' # catppuccin_mocha.Peach
+  segment4_bg = '#86BBD8' # catppuccin_mocha.Teal
+  segment5_bg = '#33658A' # catppuccin_mocha.Blue
+
+
+# JavaScript   TypeScript  
+# Ruby  Rails 
+# Python  
+# PHP  
+# React 
+# NPM 
+# C  C++    C#  
+# Assembly  
+# Go   
+# Scala 
+# NeoVim   
