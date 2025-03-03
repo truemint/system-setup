@@ -29,6 +29,17 @@ ZDOTDIR=~/.config/zsh
 source -- "$ZDOTDIR"/.zshenv
 ```
 
+# Set up git
+
+1. Install git
+2. Set up SSH keys: 
+  [Link1](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) 
+  [Link2](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  [Link3](https://stackoverflow.com/questions/4565700/how-to-specify-the-private-ssh-key-to-use-when-executing-shell-command-on-git)
+  [Link4](https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use)
+  [Link5](https://stackoverflow.com/questions/2419566/how-to-configure-multiple-ssh-private-keys-for-different-servers-efficiently)
+3. Set up git config https://stackoverflow.com/questions/37554391/what-should-be-the-path-of-gitconfig-file-in-linux
+
 
 ## Package manager
 
