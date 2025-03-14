@@ -27,6 +27,20 @@ grub
 texinfo
 mkinitcpio-firmware # https://wiki.archlinux.org/title/Mkinitcpio#Possibly_missing_firmware_for_module_XXXX
 
+
+# Linux sound system
+alsa-firmware
+alsa-utils
+pipewire
+pipewire-alsa
+pipewire-audio
+pipewire-jack
+pipewire-pulse
+wireplumber
+
+systemctl --user enable --now pipewire.service wireplumber.service pipewire-pulse.service
+
+
 # Nvidia drivers
 
 lib32-nvidia-utils
