@@ -25,7 +25,7 @@ reflector
 sudo
 grub
 texinfo
-
+mkinitcpio-firmware # https://wiki.archlinux.org/title/Mkinitcpio#Possibly_missing_firmware_for_module_XXXX
 
 # Nvidia drivers
 
