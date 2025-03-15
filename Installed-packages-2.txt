@@ -31,14 +31,16 @@ mkinitcpio-firmware # https://wiki.archlinux.org/title/Mkinitcpio#Possibly_missi
 # Linux sound system
 alsa-firmware
 alsa-utils
+libpipewire
 pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-jack
 pipewire-pulse
 wireplumber
+rtkit # https://archlinux.org/packages/extra/x86_64/rtkit/
 
-systemctl --user enable --now pipewire.service wireplumber.service pipewire-pulse.service
+systemctl --user enable --now wireplumber.service pipewire.socket pipewire-pulse.socket
 
 
 # Nvidia drivers
